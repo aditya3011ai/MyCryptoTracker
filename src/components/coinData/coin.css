@@ -1,0 +1,29 @@
+@media only screen and (max-width: 900px) {
+.coinData{
+    width: 100% !important;
+    border: none  !important;
+
+}
+.container{
+    flex-direction: column !important;
+}
+.headings{
+    display: flex ;
+    justify-content: space-evenly ;
+}
+.chart{
+    width: 100% !important;
+    margin:0 !important;
+}
+.description{
+    text-align: justify !important;
+}
+.buttons{
+    margin: 0;
+}
+}
+@media only screen and (max-width: 600px){
+.headings{
+    flex-direction: column;
+}
+}
