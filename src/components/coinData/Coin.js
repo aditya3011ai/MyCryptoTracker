@@ -9,7 +9,7 @@ import { LinearProgress } from "@mui/material";
 import ReactHtmlParser from "react-html-parser";
 import Chart from "./Chart";
 import { Container } from "@mui/material";
-import "./coin.css"
+import "./coin.css";
 
 const Coin = () => {
   const { id } = useParams();
@@ -30,7 +30,7 @@ const Coin = () => {
   const numberWithCommas = (x) => {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
-  
+
   return (
     <>
       {!coin ? (
@@ -81,7 +81,7 @@ const Coin = () => {
               variant="p"
               component="p"
               sx={{
-                textAlign:'justify',
+                textAlign: "justify",
                 fontWeight: "400",
                 padding: "0 20px 15px 20px",
               }}
@@ -121,9 +121,13 @@ const Coin = () => {
                 }}
               >
                 Current Price : {currency === "inr" ? "₹ " : "$ "}
-                {numberWithCommas(
-                  coin?.market_data?.current_price?.usd.toFixed(2)
-                )}
+                {currency === "usd"
+                  ? numberWithCommas(
+                      coin?.market_data?.current_price?.usd.toFixed(2)
+                    )
+                  : numberWithCommas(
+                      coin?.market_data?.current_price?.inr.toFixed(2)
+                    )}
               </Typography>
               <Typography
                 variant="h6"

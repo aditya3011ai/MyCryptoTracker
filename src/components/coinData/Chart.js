@@ -33,16 +33,14 @@ const Chart = ({ coin }) => {
   const [chartdata, setchartdata] = useState([]);
   const [days, setdays] = useState(1);
   const { currency } = useContext(AppContext);
-
   const GoldenButton = styled(Button)({
     width: "10rem",
-    margin:'5px',
+    margin: "5px",
     height: "50px",
-    color: "white",
-    fontWeight: "600" ,
+    fontWeight: "600",
     border: "1px solid gold",
     borderRadius: "7px",
-    minFontSize:'12px',
+    minFontSize: "12px",
     "&:hover": {
       backgroundColor: "gold",
       color: "black",
@@ -110,19 +108,54 @@ const Chart = ({ coin }) => {
         }}
         className="buttons"
       >
-        <GoldenButton style={{}} onClick={() => setdays(1)}>
+        <GoldenButton
+          sx={{
+            backgroundColor: days === 1 ? "gold" : "",
+            color: days === 1 ? "black" : "white",
+          }}
+          onClick={() => setdays(1)}
+        >
           24 Hours
         </GoldenButton>
-        <GoldenButton sx={{}} onClick={() => setdays(30)}>
+        <GoldenButton
+          sx={{
+            color: days === 30 ? "black" : "white",
+            backgroundColor: days === 30 ? "gold" : "",
+          }}
+          onClick={() => setdays(30)}
+        >
           1 Month
         </GoldenButton>
-        <GoldenButton sx={{ fontSize: "13px" }} onClick={() => setdays(90)}>
+        <GoldenButton
+          sx={{
+            fontSize: "13px",
+            backgroundColor: days === 90 ? "gold" : "",
+            color: days === 90 ? "black" : "white",
+          }}
+          onClick={() => {
+            setdays(90);
+          }}
+        >
           3 Months
         </GoldenButton>
-        <GoldenButton sx={{}} onClick={() => setdays(365)}>
+        <GoldenButton
+          sx={{
+            backgroundColor: days === 365 ? "gold" : "",
+            color: days === 365 ? "black" : "white",
+          }}
+          onClick={() => setdays(365)}
+        >
           1 Year
         </GoldenButton>
-        <GoldenButton onClick={() => setdays(1826)}>5 Years</GoldenButton>
+        <GoldenButton
+          sx={{
+            backgroundColor: days === 1826 ? "gold" : "",
+            color: days === 1826 ? "black" : "white",
+          }}
+          onClick={() => setdays(1826)}
+        >
+          5 Years
+        </GoldenButton>
       </div>
     </div>
   );

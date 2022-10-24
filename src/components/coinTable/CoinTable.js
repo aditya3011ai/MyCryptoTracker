@@ -76,7 +76,7 @@ const CoinTable = () => {
             setSearch(e.target.value);
           }}
         />
-        {!coins ? (
+        {!coins.length ? (
           <LinearProgress
             style={{ backgroundColor: "#F5B001", marginTop: "10px" }}
             color="inherit"

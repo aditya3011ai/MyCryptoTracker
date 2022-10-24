@@ -86,7 +86,7 @@ const Carosal = () => {
     },
   };
   return (
-    !items ? (
+    !items.length ? (
     <CircularProgress style={{ color: "gold" , marginTop:'1rem'}} size={200} thickness={1} />
   ) : 
    ( <AliceCarousel
